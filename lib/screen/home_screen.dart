@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:homescreen_compassapp/screen/screen_compass.dart';
-import 'package:homescreen_compassapp/widgets/funtion_fullwidth.dart';
 import 'package:homescreen_compassapp/widgets/user_info_bar.dart';
 import 'package:homescreen_compassapp/widgets/funtion_gidview.dart';
 
@@ -14,16 +11,14 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           // Hiển thị ảnh nền SVG
-          SvgPicture.asset(
-            'assets/svg/screenbg_compass_home.svg',
+          Image.asset(
+            'assets/images/background.jpg',
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
-            colorFilter: ColorFilter.mode(
-              Colors.black
-                  .withOpacity(0.3), // Áp dụng màu đen 30% để giảm độ sáng
-              BlendMode.srcATop,
-            ),
+            color: Colors.black
+                .withOpacity(0.1), // Áp dụng màu đen 30% để giảm độ sáng
+            colorBlendMode: BlendMode.srcATop,
           ),
           SafeArea(
             child: Column(
@@ -47,22 +42,6 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
                           // Nội dung chính của màn hình
-                          InkWell(
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CompassDetailScreen(
-                                  title: "La bàn bát trạch theo tuổi",
-                                  description:
-                                      "Mô tả chi tiết cho la bàn bát trạch theo tuổi...",
-                                ),
-                              ),
-                            ),
-                            child: funtionFullWidth(
-                              'assets/images/old_compass.png',
-                              'La bàn bát trạch theo tuổi',
-                            ),
-                          ),
 
                           const SizedBox(height: 10),
                           GridView.count(
@@ -78,14 +57,9 @@ class HomeScreen extends StatelessWidget {
                               ),
                               funtionGidview(
                                 'assets/images/24_directions.png',
-                                'La bàn 24 sơn hướng',
+                                'La bàn theo tuổi',
                               ),
                             ],
-                          ),
-                          const SizedBox(height: 10),
-                          funtionFullWidth(
-                            'assets/images/old_compass.png',
-                            'Thước lỗ ban',
                           ),
                         ],
                       ),

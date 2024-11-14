@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CompassDetailScreen extends StatelessWidget {
   final String title;
   final String description;
-  final String backgroundImagePath = 'assets/svg/screenbg_compass.svg';
+  final String backgroundImagePath = 'assets/images/bg_screen_star.jpg';
   final String compassImagePath = 'assets/images_compass/lb_e1.png';
 
   const CompassDetailScreen({

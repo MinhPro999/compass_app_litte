@@ -11,30 +11,10 @@ class _UserInfoBarState extends State<UserInfoBar> {
   String _gender = 'Nam'; // Giá trị mặc định
   final TextEditingController _yearController = TextEditingController();
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     color: const Color(0xff1b1f3c), // Màu nền của status bar
-  //     padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-  //     child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //       children: [
-  //         Image.asset(
-  //           'assets/svg/logo.svg',
-  //           height: 44,
-  //           width: 44,
-  //         ),
-  //         _buildGenderSelection(), // Widget chọn giới tính
-  //         _buildYearOfBirthField(), // Widget nhập năm sinh
-  //       ],
-  //     ),
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xff1b1f3c), // Màu nền của status bar
+      color: const Color.fromARGB(222, 190, 10, 10), // Màu nền của status bar
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,9 +65,9 @@ class _UserInfoBarState extends State<UserInfoBar> {
               _gender = newValue!;
             });
           },
-          activeColor: const Color(0xff74d9fd),
+          activeColor: const Color(0xFFC7C400),
         ),
-        Text(value, style: const TextStyle(color: Colors.white)),
+        Text(value, style: const TextStyle(color: Color(0xFFFDFC99))),
       ],
     );
   }
@@ -108,7 +88,7 @@ class _UserInfoBarState extends State<UserInfoBar> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0), // Bo tròn các góc của ô
             borderSide: const BorderSide(
-              color: Color(0xff74d9fd), // Màu viền
+              color: Color(0xFFFDFC99), // Màu viền
               width: 2, // Độ dày viền
             ),
           ),
@@ -117,7 +97,7 @@ class _UserInfoBarState extends State<UserInfoBar> {
             borderRadius:
                 BorderRadius.circular(8.0), // Bo tròn khi không nhấn vào
             borderSide: const BorderSide(
-              color: Color(0xff74d9fd), // Màu viền khi không nhấn vào
+              color: Color(0xFFFDFC99), // Màu viền khi không nhấn vào
               width: 2,
             ),
           ),
@@ -125,7 +105,7 @@ class _UserInfoBarState extends State<UserInfoBar> {
             // Viền khi ô được nhấn vào
             borderRadius: BorderRadius.circular(8.0), // Bo tròn khi nhấn vào
             borderSide: const BorderSide(
-              color: Color(0xff74d9fd),
+              color: Color(0xFFC7C400),
               width: 2,
             ),
           ),

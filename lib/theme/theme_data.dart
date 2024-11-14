@@ -24,7 +24,7 @@ class MyThemeData {
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Color(0xffd32f2f)),
       ),
       textTheme: const TextTheme(
         displayLarge: TextStyle(
@@ -48,7 +48,7 @@ class MyThemeData {
       ),
       inputDecorationTheme: const InputDecorationTheme(
         filled: true,
-        fillColor: Color(0xffffebee), // Nền nhạt màu đỏ
+        fillColor: Color(0xffd32f2f), // Nền nhạt màu đỏ
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: Color(0xffd32f2f), width: 2),
         ),
@@ -76,19 +76,19 @@ class MyThemeData {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(const Color(0xffd32f2f)),
-          foregroundColor: MaterialStateProperty.all(Colors.white),
-          elevation: MaterialStateProperty.all(5),
-          shape: MaterialStateProperty.all(
+          backgroundColor: WidgetStateProperty.all(const Color(0xffd32f2f)),
+          foregroundColor: WidgetStateProperty.all(const Color(0xFFEC8494)),
+          elevation: WidgetStateProperty.all(5),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           ),
-          textStyle: MaterialStateProperty.all(
+          textStyle: WidgetStateProperty.all(
             const TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
           ),
-          shadowColor: MaterialStateProperty.all(
+          shadowColor: WidgetStateProperty.all(
             const Color(0xffd32f2f).withOpacity(0.5),
           ),
-          padding: MaterialStateProperty.all(
+          padding: WidgetStateProperty.all(
             const EdgeInsets.symmetric(horizontal: 30, vertical: 16),
           ),
         ),
