@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 // Widget nội dung nhỏ gidview
 Widget funtionGidview(String imagePath, String title, VoidCallback onTap) {
-  return GestureDetector(
-    onTap: onTap, // Kích hoạt callback khi được nhấn
+  return InkWell(
+    onTap: onTap, // Thêm sự kiện onTap
     child: Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -13,17 +13,20 @@ Widget funtionGidview(String imagePath, String title, VoidCallback onTap) {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.cover,
-              height: 140,
-              width: double.infinity,
+          Expanded(
+            // Giúp hình ảnh chiếm không gian phù hợp
+            child: ClipRRect(
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(16)),
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
             child: Text(
               title,
               style: const TextStyle(

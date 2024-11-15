@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:homescreen_compassapp/widgets/main_compass.dart';
 
 class CompassDetailScreen extends StatelessWidget {
   final String title;
   final String description;
-  final String backgroundImagePath = 'assets/images/bg_screen_star.jpg';
+  final String backgroundImagePath = 'assets/images/screen_dang.jpg';
   final String compassImagePath = 'assets/images/compass.png';
 
   const CompassDetailScreen({
@@ -15,9 +16,32 @@ class CompassDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xF6FFFFFF),
+          ),
+          onPressed: () {
+            Navigator.pop(context); // Quay lại màn hình trước
+          },
+        ),
+        title: const Text(
+          'La Bàn Cơ Bản',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: const Color(0xAEBE0A0A),
+        elevation: 0,
+      ),
+      extendBodyBehindAppBar: true, // Để AppBar nằm trên ảnh nền
       body: Stack(
         children: [
-          // Ảnh nền SVG
+          // Ảnh nền
           Image.asset(
             backgroundImagePath,
             fit: BoxFit.cover,
@@ -30,25 +54,14 @@ class CompassDetailScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Tiêu đề
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 120), // Thêm khoảng trống dưới AppBar
                   // Hình ảnh la bàn
                   Center(
-                    child: Image.asset(
-                      compassImagePath,
-                      height: 300, // Thay đổi kích thước phù hợp với thiết kế
-                      width: 300,
-                      fit: BoxFit.contain,
+                    child: CompassWidget(
+                      compassImagePath: compassImagePath,
                     ),
                   ),
+
                   const SizedBox(height: 16),
                   // Mô tả
                   Text(

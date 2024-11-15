@@ -45,5 +45,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+<string>Ứng dụng cần truy cập cảm biến để sử dụng la bàn.</string>
+<key>UIRequiredDeviceCapabilities</key>
+<array>
+    <string>magnetometer</string>
+</array>
+
 </dict>
 </plist>

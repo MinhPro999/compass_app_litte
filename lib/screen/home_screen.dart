@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
-                            'Chọn Chức Năng',
+                            'Chọn La Bàn',
                             style: TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
@@ -45,47 +45,93 @@ class HomeScreen extends StatelessWidget {
                           // Nội dung chính của màn hình
 
                           const SizedBox(height: 10),
-                          GridView.count(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 8,
-                            mainAxisSpacing: 8,
+                          // GridView.count(
+                          //   crossAxisCount: 2,
+                          //   crossAxisSpacing: 8,
+                          //   mainAxisSpacing: 8,
+                          //   shrinkWrap: true,
+                          //   physics: const NeverScrollableScrollPhysics(),
+                          //   children: [
+                          //     funtionGidview(
+                          //       'assets/images/normal_compass.png',
+                          //       'La bàn cơ bản',
+                          //       () {
+                          //         Navigator.push(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //             builder: (context) =>
+                          //                 const CompassDetailScreen(
+                          //               title: '',
+                          //               description: '',
+                          //             ),
+                          //           ),
+                          //         );
+                          //       },
+                          //     ),
+                          //     funtionGidview(
+                          //       'assets/images/24_directions.png',
+                          //       'La bàn theo tuổi',
+                          //       () {
+                          //         Navigator.push(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //             builder: (context) =>
+                          //                 const CompassDetailScreen(
+                          //               title: '',
+                          //               description: '',
+                          //             ),
+                          //           ),
+                          //         );
+                          //       },
+                          //     ),
+                          //   ],
+                          // ),
+                          GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2, // Số cột
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
+                              mainAxisExtent: 200, // Chiều cao mỗi item
+                            ),
                             shrinkWrap: true,
                             physics: const NeverScrollableScrollPhysics(),
-                            children: [
-                              funtionGidview(
-                                'assets/images/normal_compass.png',
-                                'La bàn cơ bản',
-                                () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          const CompassDetailScreen(
-                                        title: '',
-                                        description: '',
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                              funtionGidview(
-                                'assets/images/24_directions.png',
-                                'La bàn theo tuổi',
-                                () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          const CompassDetailScreen(
-                                        title: '',
-                                        description: '',
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
+                            itemCount: 2,
+                            itemBuilder: (context, index) {
+                              return index == 0
+                                  ? funtionGidview(
+                                      'assets/images/normal_compass.png',
+                                      'La bàn cơ bản',
+                                      () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const CompassDetailScreen(
+                                                title: '',
+                                                description: '',
+                                              ),
+                                            ));
+                                      },
+                                    )
+                                  : funtionGidview(
+                                      'assets/images/24_directions.png',
+                                      'La bàn theo tuổi',
+                                      () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const CompassDetailScreen(
+                                              title: '',
+                                              description: '',
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                            },
+                          )
                         ],
                       ),
                     ),
