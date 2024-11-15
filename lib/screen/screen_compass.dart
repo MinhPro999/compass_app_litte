@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CompassDetailScreen extends StatelessWidget {
   final String title;
   final String description;
   final String backgroundImagePath = 'assets/images/bg_screen_star.jpg';
-  final String compassImagePath = 'assets/images_compass/lb_e1.png';
+  final String compassImagePath = 'assets/images/compass.png';
 
   const CompassDetailScreen({
     super.key,
@@ -19,7 +18,7 @@ class CompassDetailScreen extends StatelessWidget {
       body: Stack(
         children: [
           // Ảnh nền SVG
-          SvgPicture.asset(
+          Image.asset(
             backgroundImagePath,
             fit: BoxFit.cover,
             width: double.infinity,

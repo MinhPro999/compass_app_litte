@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:homescreen_compassapp/widgets/user_info_bar.dart';
+import 'package:homescreen_compassapp/screen/screen_compass.dart';
 import 'package:homescreen_compassapp/widgets/funtion_gidview.dart';
+import 'package:homescreen_compassapp/widgets/user_info_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -54,10 +55,34 @@ class HomeScreen extends StatelessWidget {
                               funtionGidview(
                                 'assets/images/normal_compass.png',
                                 'La bàn cơ bản',
+                                () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CompassDetailScreen(
+                                        title: '',
+                                        description: '',
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                               funtionGidview(
                                 'assets/images/24_directions.png',
                                 'La bàn theo tuổi',
+                                () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CompassDetailScreen(
+                                        title: '',
+                                        description: '',
+                                      ),
+                                    ),
+                                  );
+                                },
                               ),
                             ],
                           ),
